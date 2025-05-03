@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="js/classes/styles.css">
+    <title>Wordle</title>
+</head>
+<body>
+    <div id="usernameScreen" class="usernameScreen">
+        <div class="wrongInput"> Username cannot be more than 8 characters long </div>
+        <div class="wrongInput"> Username cannot not be empty </div>
+        <div class="wrongInput"> Username is already in use </div>
+        <div class="usernameBlock">
+            <h1> Enter your Username </h1>
+            <input type="text" id="usernameInput" class="usernameInput" spellcheck="false" placeholder="Enter username..."><br>
+            <button id="startBtn" class="startBtn">Start Game</button>
+        </div>
+    </div>
+
+    <div id="highscore" class="score highscore"> Top Score: 0 </div>
+    <div id="username" class="score"> Username: </div>
+    <div id="score" class="score"> Score: 0 </div>
+    <button class="switchColorBtn" onclick="switchColorModes(); this.blur()"></button>
+    <button class="newGameBtn" onclick="initializeNewGame(); this.blur();"> New Game </button>
+    <div class="msgBox invalidMsgBox"> Invalid Word </div>
+    <div class="msgBox loseMsgBox"></div>
+    <div class="msgBox winMsgBox"> You Win! </div>
+    <div class="msgBox newGameMsgBox"> New Game Started! </div>
+    
+    <div class="allBoxes">
+        <div id="boxes1">
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div><br>
+        </div>
+
+        <div id="boxes2">
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div><br>
+        </div>
+
+        <div id="boxes3">
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div><br>
+        </div>
+
+        <div id="boxes4">
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div><br>
+        </div>
+
+        <div id="boxes5">
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div><br>
+        </div>
+
+        <div id="boxes6">
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div>
+            <div id="displayBox" class="displayBox"></div><br>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

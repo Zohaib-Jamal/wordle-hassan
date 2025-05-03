@@ -1,0 +1,277 @@
+Button {
+    position: fixed;
+    height: 150px;
+    width: 150px;
+    bottom: 35px;
+    border: none;
+    box-sizing: border-box;
+    background-color: #646164;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: white;
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 1);
+    animation: animateButtonMove 1s linear infinite;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    will-change: bottom;
+    z-index: 10;
+}
+
+.score {
+    padding: 0%;
+    color: white;
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.highscore {
+    position: absolute;
+    right: 5px;
+}
+
+.newGameBtn {
+    left: 25px;
+}
+
+.switchColorBtn {
+    right: 25px;
+}
+
+.newGameBtn:hover {
+    background-color:rgb(211, 41, 41);
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.95);
+    transform: scale(1.05);
+}
+
+.newGameBtn:active:hover {
+    background-color: #e24e4e;
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.65);
+    transform: scale(0.95);
+}
+
+.switchColorBtn:hover {
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.95);
+    transform: scale(1.05);
+}
+
+.switchColorBtn:active:hover {
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.65);
+    transform: scale(0.95);
+}
+
+
+@keyframes animateButtonMove {
+    0%, 100% {
+        bottom: 35px;
+    }
+    50% {
+        bottom: 38px;
+    }
+    75% {
+        bottom: 36px;
+    }
+}
+
+.displayBox {
+    display: inline-block;
+    height: 85px;
+    width: 85px;
+    font-family: sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+
+    margin-bottom: 10px;
+    vertical-align: middle;
+    line-height: 85px;
+    text-align: center;
+    border: 2px solid #646164;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+.allBoxes {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.animateBoxGrowAndShrink {
+    animation: animateBoxesGrowAndShrink 0.25s forwards;
+}
+
+.animateBoxRotate {
+    animation: animateBoxesRotate 0.5s linear;
+}
+
+@keyframes animateBoxesRotate {
+    0%, 100% {
+        transform: rotate3d(0, 0, 0);
+    }
+    25%, 75% {
+        transform: rotate3d(1, 0, 0, 45deg);
+    }
+    50% {
+        transform: rotate3d(1, 0, 0, 90deg);
+    }
+}
+
+@keyframes animateBoxesGrowAndShrink {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+.msgBox {
+    position: absolute;
+    height: 150px;  
+    width: 400px;
+    left: 50%;
+    top: 25%;
+    line-height: 150px;
+    text-align: center;
+    transform: translate(-50%, -25%);
+
+    color: white;
+    background-color: #646164;
+
+    z-index: 999;
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 3);
+
+    font-family: sans-serif;
+    font-weight: 600;   
+    opacity: 0;
+}
+
+.invalidMsgBox {
+    font-size: 50px;
+}
+
+.winMsgBox {
+    font-size: 50px;
+}
+
+.loseMsgBox {
+    font-size: 30px;
+    line-height: 75px;
+}
+
+.newGameMsgBox {    
+    font-size: 45px;
+    line-height: 75px;
+}
+
+
+
+.animateMsgBox {
+    animation: animateMsgBoxes 2s ease-in-out;
+}
+
+@keyframes animateMsgBoxes {
+    0%, 100% {
+        opacity: 0;
+    }
+    25%, 75%{
+        opacity: 0.9;
+    }
+}
+
+.usernameScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: sans-serif;
+    z-index: 1000;
+}
+
+.wrongInput {
+    position: absolute;
+    top: 28%;
+    font-size: 25px;
+    background-color: #3d3d3d;
+    opacity: 0;
+    padding: 7px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #555;
+}
+
+.animateWrongInputBox {
+    animation: animateWrongInput 4s ease-in-out ;
+}
+
+@keyframes animateWrongInput {
+    0%, 100% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+}
+
+.usernameBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.usernameInput {
+    width: 100%;
+    height: 50px;
+    font-family: sans-serif;
+    letter-spacing: 1.25px;
+    font-size: 25px;
+    background-color: #333; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.usernameInput:focus {
+    outline: none;
+    box-shadow: 0 0 10px #555;
+}
+
+.usernameInput:-webkit-autofill,
+.usernameInput:-webkit-autofill:hover, 
+.usernameInput:-webkit-autofill:focus, 
+.usernameInput:-webkit-autofill:active {
+    background-color: #333 !important; 
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+    -webkit-box-shadow: 0 0 0px 1000px #333 inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.startBtn {
+    all: revert;
+    outline: none;
+    background-color: #df2626;
+    border: none;
+    border-radius: 5px;
+    font-family: fantasy;
+    letter-spacing: 1.5px;
+    font-size: 25px;
+    width: 50%;
+    height: 35px;
+    color: #ffffff;
+}
+
+.startBtn:hover {
+    box-shadow: 0 0 7px #eb5a5a;
+}
+
+.startBtn:active {
+    box-shadow: 0 0 7px #eb5a5a;
+    background-color: #861414;
+}
