@@ -17,3 +17,15 @@ jobs:
                 run: docker build -t zohaibjamal/wordle .
             -   name: Publish image to Docker Hub
                 run: docker push zohaibjamal/wordle:latest
+    deploy:
+        needs: build
+        runs-on: self-hosted
+        steps:
+            -   name: Pull Image from Docker Hub
+                run: sudo docker pull zohaibjamal/wordle:latest
+            -   name: Stop Old Container
+                run: sudo docker stop wordle-app-container || true
+            -   name: Remove Old Container
+                run: sudo docker rm wordle-app-container || true
+            -   name: Run Docker Container
+                run: sudo docker run -d -p 5000:4000 --name wordle-app-container zohaibjamal/wordle:latest
